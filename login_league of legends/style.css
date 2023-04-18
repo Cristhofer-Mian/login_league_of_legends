@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', 'sans-serif';
+}
+
+:root {
+    --white: #FFF;
+    --whitesmoke: #F9F9F9;
+    --light-grey: #ECECEC;
+    --grey: #C4C4C4;
+    --medium-grey: #A7A7A7;
+    --deep-grey: #343434;
+    --black: #000000;
+    --blue: #1B77F3;
+    --red: #CF3C3F;
+}
+
+main{
+    display: flex;
+}
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    padding: clamp(35px, 8%, 70px);
+    justify-content: space-between;
+    /*clamp(mínimo, desejado, máximo)*/
+}
+
+.login__logo {
+    width: 130px;
+    margin-bottom: 80px;
+}
+
+.login__title {
+    color: var(--deep-grey);
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.login__label {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.input {
+    width: 100%;
+    background-color: var(--light-grey);
+    border-radius: 5px;
+    outline: none; /*para não deixar a borda azul quando selecionado*/
+    font-size: 0.9em;
+    padding: 25px 10px 10px; /*25px topo, 10px esquerda e direita, 10 px embaixo*/
+    font-weight: 600;
+    color: var(--deep-grey);
+    border: 2px solid rgba(0, 0, 0, 0); /*como defini uma borda para o FOCO, o último dígito do RGBA é referente à transparência (1 = 100% visível e 0 = transparente) */
+}
+
+.login__label span {
+    position: absolute;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    /*deixar o texto todo em maiúsculo*/
+    color: var(--medium-grey);
+    margin: 20px;
+    cursor: text;
+    transition: all 200ms ease;
+}
+
+.input:focus {
+    background-color: (var(--whitesmoke));
+    border: 2px solid var(--deep-grey);
+}
+
+.login__label .span-active {
+    font-size: 0.7em;
+    margin: 8px 10px;
+}
+
+.login__icons{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.login__icons img{
+    width: 20px;
+}
+
+.icons__button{
+   width: 30%; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 35px;
+   border-radius: 5px;
+   cursor: pointer;
+   border: none;
+}
+
+.login__icons .icons__button:nth-child(1) {
+    background-color: var(--blue);
+/*significa que dentro da clase mãe (.login__icons), to pegando o primeiro .icons_button */
+}
+
+.login__icons .icons__button:nth-child(2) {
+    background-color: var(--light-grey);
+/*significa que dentro da clase mãe (.login__icons), to pegando o segundo .icons_button */
+}
+
+.login__icons .icons__button:nth-child(3) {
+    background-color: var(--black);
+/*significa que dentro da clase mãe (.login__icons), to pegando o terceiro .icons_button */
+}
+
+.login__label--checkbox{
+    width: 100%;
+    margin: 15px 0 50px;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.input--checkbox{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--light-grey);
+    margin-right: 8px;
+    border-radius: 3px;
+}
+
+.input--checkbox:checked{
+    background-color: var(--red);
+}
+
+.input--checkbox:checked:after{
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: 3px solid rgb(255, 255, 255);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    margin: 2px 6px;
+}
+
+.login__button svg {
+    fill: white; /*preenchimento do ícone (como se fosse sua cor)*/
+}
+
+.login__button{
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--red);
+    border-radius:20px;
+    border:none;
+    cursor: pointer;margin-bottom: 60px;
+}
+
+.login__button:disabled{
+    cursor: auto;
+    background-color: white;
+    border: 2px solid var(--light-grey);
+}
+
+.login__button svg {
+    fill: var(--grey)
+}
+
+.login__link{
+    text-decoration: none;
+    font-size: 0.8em;
+    color: var(--medium-grey);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.wallpaper{
+    width: 100%;
+    background-image: url(./imagens/wallpaper.jpg);
+    background-size: cover; /*vai cobrir todo o spaço disponível, sem deformar a imagem*/
+    background-position: center;
+    flex: 1;
+}
